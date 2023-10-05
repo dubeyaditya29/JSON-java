@@ -24,7 +24,7 @@ public class XMLParserConfiguration extends ParserConfiguration {
 
     /** Original Configuration of the XML Parser. */
     public static final XMLParserConfiguration ORIGINAL
-        = new XMLParserConfiguration();
+            = new XMLParserConfiguration();
     /** Original configuration of the XML Parser except that values are kept as strings. */
     public static final XMLParserConfiguration KEEP_STRINGS
         = new XMLParserConfiguration().withKeepStrings(true);

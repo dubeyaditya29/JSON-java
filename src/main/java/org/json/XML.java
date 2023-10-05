@@ -849,11 +849,16 @@ public class XML {
                             sb.append(toString(val, key, config, indentFactor, indent));
                         }
                     }
+                    // #Fix: #748
                 } else if ("".equals(value)) {
                     sb.append(indent(indent));
                     sb.append('<');
                     sb.append(key);
-                    sb.append("/>");
+                    sb.append('>');
+                    sb.append('<');
+                    sb.append("/");
+                    sb.append(key);
+                    sb.append(">");
                     if(indentFactor > 0){
                         sb.append("\n");
                     }
@@ -875,6 +880,7 @@ public class XML {
                     sb.append("\n");
                 }
             }
+            System.out.println(sb.toString());
             return sb.toString();
 
         }

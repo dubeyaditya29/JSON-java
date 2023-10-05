@@ -37,6 +37,23 @@ public class XMLTest {
      * JUnit supports temporary files and folders that are cleaned up after the test.
      * https://garygregory.wordpress.com/2010/01/20/junit-tip-use-rules-to-manage-temporary-files-and-folders/ 
      */
+
+    @Test
+    public void issue748() {
+    // Your JSON object as a string
+    String jsonString = "{\"name\":\"aditya\", \"job\":\"\"}";
+
+        // Parse the JSON string into a JSONObject
+        JSONObject jsonObject = new JSONObject(jsonString);
+
+        // Convert the JSONObject to an XML string
+        String xmlString = XML.toString(jsonObject);
+
+        // Print the XML string
+        System.out.println(xmlString);
+    }
+
+
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
 
