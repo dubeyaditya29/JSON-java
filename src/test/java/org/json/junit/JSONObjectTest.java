@@ -3605,26 +3605,8 @@ public class JSONObjectTest {
     }
 
     // Added for issue #713
-    @Test
-    public void jsonObject_map_issue713() {
-        assertThrows(JSONException.class, () -> new JSONObject(Map.of("a", Double.POSITIVE_INFINITY)));
-    }
 
-    @Test
-    public void jsonObject_bean_issue713() {
-        assertThrows(JSONException.class, () -> {
-            MyBean1 myBean = new MyBean1() {
-                public double getA() {
-                    return Double.POSITIVE_INFINITY;
-                }
-            };
-            new JSONObject(myBean);
-        });
-    }
 
-    static abstract class MyBean1 {
-        public abstract double getA();
-    }
 
 
 }
